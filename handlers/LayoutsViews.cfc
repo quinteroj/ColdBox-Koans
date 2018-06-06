@@ -81,8 +81,7 @@ component extends="coldbox.system.EventHandler"{
 	}
 
 	function layoutExists(event,rc,prc){
-		event.setView( view="layoutsviews/expert/buildaview", layout="expertlayoutsviews/buildalayout" );
-
+		event.renderData( type="html", data=renderLayout( layout="expertlayoutsviews/buildalayout", view="layoutsviews/expert/buildaview" ) );
 	}
     
 }

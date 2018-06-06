@@ -38,14 +38,13 @@ component extends="coldbox.system.testing.BaseTestCase" appMapping="/"{
 				});
 				
 				it( "Can make a new layout file", function() {
-					// Make a new layout file so our function that uses the view layoutsviews/layoutExists works
+                    // Make a new layout file so our function that uses the view layoutsviews/layoutExists works
 					// Add 13216519863 somewhere in the Layout to verify
 					
                     var event = execute( "layoutsViews.layoutExists" );
 					// Do your expectations below
-					var prc = event.getPrivateCollection();
-					writeDump( prc ); abort;
-					expect( prc.currentLayout ).toBe( "expertlayoutsviews/buildalayout.cfm" );
+                    var prc = event.getPrivateCollection();
+					expect( prc.cbox_renderdata.data ).toBe( "13216519863" );
 				});
 		   
             });
